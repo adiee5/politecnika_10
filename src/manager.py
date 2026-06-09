@@ -220,7 +220,15 @@ class Manager:
         return output
 
     def calculate_tax(self, year: int, month: int, tax_rate: float) -> float:
-        """Calculate the tax amount based on the total income from transfers."""
+        """Calculate the tax amount based on the total income from transfers.
+
+        Args:
+        ----
+            year (int): The year of the tax.
+            month (int): The month of the tax.
+            tax_rate (float): The rate of the tax passed as a fraction (**not** sa a percent!).
+
+        """
         total_income = sum(
             transfer.amount_pln
             for transfer in self.transfers
