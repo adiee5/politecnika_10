@@ -252,7 +252,17 @@ class Manager:
         return total_deposits - total_due
 
     def get_annual_balance(self, year: int) -> float:
-        """Calculate the annual balance for a given year based on transfers and bills."""
+        """Calculate the annual balance for a given year based on transfers and bills.
+
+        Args:
+        ----
+            year (int): The year for which to calculate the balance.
+
+        Returns:
+        -------
+            float: The annual balance.
+
+        """
         total_income = sum(
             transfer.amount_pln
             for transfer in self.transfers
@@ -264,7 +274,19 @@ class Manager:
         return total_income - total_due
 
     def has_any_bills(self, apartment_key: str, year: int, month: int) -> bool:
-        """Check if there are any bills for a given apartment key, year, and month."""
+        """Check if there are any bills for a given apartment key, year, and month.
+
+        Args:
+        ----
+            apartment_key (str): The key/ID of the apartment for which to check for bills.
+            year (int): The year for which to check for bills.
+            month (int): The month for which to check for bills.
+
+        Returns:
+        -------
+            bool: Are there any bills?.
+
+        """
         if month < 1 or month > 12:
             raise ValueError("Month must be between 1 and 12")
         if apartment_key not in self.apartments:
