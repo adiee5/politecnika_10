@@ -45,5 +45,5 @@ Highlights
 Authors
 ------
 Łukasz Kułacz - initial implementation, testing, documentation
-
+Adrian - The current owner of the repo and the trainee that was learning using this repo
 """
